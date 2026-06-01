@@ -19,7 +19,7 @@ export default function Home() {
           <p>
             I&apos;m Cameron Sadler, a product engineer and former founder. This
             is where I write memos about products and markets I&apos;ve researched,
-            explored, or allocated capital to.
+            developed, or allocated capital to.
           </p>
         </section>
 

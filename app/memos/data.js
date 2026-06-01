@@ -9,9 +9,29 @@ const bolognaSections = [
   {
     id: "42-underemployment",
     title: "42% Underemployment",
-    paragraphs: [
-      `934 years later, in 2022, I had a casual conversation with Sam Altman, founder and CEO of OpenAI, about the current state of higher education. This was before the explosion of ChatGPT, but it was becoming clearer that AI would have an impact on labor markets and education. Sam asked what we should do about the problems we discussed, and I highlighted a segment of the higher education system, community colleges, that's ripe for a full administrative overhaul and most likely to adopt and create a successful wedge. Much of the hedge was betting a community college infused with AI could produce results on par with the finest universities in the U.S.`,
+    embeds: [
+      {
+        type: "tweet",
+        url: "https://x.com/sama/status/1505597901011005442",
+      },
     ],
+    paragraphs: [
+      `934 years later, in 2022, Sam Altman, founder and CEO of OpenAI, posted on X predicting a collapse in higher education. I sent him an email about the University of Bologna, believing the history of higher education may inspire solutions for its future. He responded, and we had a phone call a few hours later. About a week later, Sam agreed to fund one of the solutions we discussed. This was before the explosion of ChatGPT, but it was becoming clearer that AI would have an impact on labor markets and education. Sam asked what we should do about the problems we discussed, and I highlighted a segment of the higher education system, community colleges, that's ripe for a full administrative overhaul and most likely to adopt and create a successful wedge. Much of the hedge was betting that a community college infused with AI could produce results on par with the finest universities in the U.S.`,
+      [
+        `Sam was prescient about the decline in U.S. college education. Enrollment is down across the board, but the most alarming stat is that `,
+        {
+          text: "42% of college graduates are in jobs they could have picked up out of high school",
+          href: "https://www.newyorkfed.org/research/college-labor-market",
+        },
+        `. This muddies the ROI of college, which admittedly has benefits outside of earnings, but that's becoming an afterthought as AI drives massive labor market change.`,
+      ],
+    ],
+    chart: {
+      title: "New York Fed college labor market chart",
+      src: "https://www.newyorkfed.org/research/college-labor-market#--:explore:unemployment",
+      source: "Federal Reserve Bank of New York, The Labor Market for Recent College Graduates",
+      sourceUrl: "https://www.newyorkfed.org/research/college-labor-market",
+    },
   },
   {
     id: "automated-college-administration",

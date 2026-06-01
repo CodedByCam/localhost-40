@@ -1,4 +1,6 @@
 import { notFound } from "next/navigation";
+import Script from "next/script";
+import { Fragment } from "react";
 import CollegeAdminDemo, { CourseEvidence } from "./CollegeAdminDemo";
 import { getMemoBySlug, memos } from "../data";
 
@@ -89,10 +91,19 @@ function BolognaMemo({ memo }) {
             <section className="article-section" id={section.id} key={section.id}>
               <h2>{section.title}</h2>
 
+              {section.embeds?.map((embed) =>
+                embed.type === "tweet" ? (
+                  <TweetEmbed key={embed.url} url={embed.url} />
+                ) : null,
+              )}
+
               {section.paragraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
+                <p key={getParagraphKey(paragraph)}>
+                  <InlineParagraph paragraph={paragraph} />
+                </p>
               ))}
 
+              {section.chart ? <ResearchChart chart={section.chart} /> : null}
               {section.demo ? <CollegeAdminDemo label={section.demo} /> : null}
               {section.id === "courses" ? <CourseEvidence /> : null}
               {section.image ? (
@@ -105,6 +116,67 @@ function BolognaMemo({ memo }) {
         </div>
       </article>
     </main>
+  );
+}
+
+function getParagraphKey(paragraph) {
+  if (typeof paragraph === "string") {
+    return paragraph;
+  }
+
+  return paragraph
+    .map((part) => (typeof part === "string" ? part : part.text))
+    .join("");
+}
+
+function InlineParagraph({ paragraph }) {
+  if (typeof paragraph === "string") {
+    return paragraph;
+  }
+
+  return paragraph.map((part, index) => {
+    if (typeof part === "string") {
+      return <Fragment key={`text-${index}`}>{part}</Fragment>;
+    }
+
+    return (
+      <a href={part.href} key={`${part.href}-${part.text}`}>
+        {part.text}
+      </a>
+    );
+  });
+}
+
+function TweetEmbed({ url }) {
+  return (
+    <figure className="tweet-embed">
+      <blockquote className="twitter-tweet" data-dnt="true">
+        <a href={url}>Sam Altman on X</a>
+      </blockquote>
+      <Script
+        async
+        src="https://platform.twitter.com/widgets.js"
+        strategy="lazyOnload"
+      />
+    </figure>
+  );
+}
+
+function ResearchChart({ chart }) {
+  return (
+    <figure className="research-chart">
+      <iframe
+        loading="lazy"
+        src={chart.src}
+        title={chart.title}
+      />
+      <figcaption>
+        Source:{" "}
+        <a href={chart.sourceUrl} rel="noreferrer" target="_blank">
+          {chart.source}
+        </a>
+      </figcaption>
+    </figure>
   );
 }
 

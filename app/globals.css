@@ -334,6 +334,52 @@ p {
   line-height: 1.66;
 }
 
+.article-body a {
+  color: var(--accent);
+  text-decoration-color: rgba(31, 65, 121, 0.34);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.article-body a:hover,
+.article-body a:focus-visible {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+.tweet-embed,
+.research-chart {
+  width: 100%;
+  margin: 4px 0 10px;
+}
+
+.tweet-embed {
+  min-height: 116px;
+}
+
+.tweet-embed blockquote {
+  margin: 0 !important;
+}
+
+.research-chart {
+  display: grid;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.research-chart iframe {
+  width: 100%;
+  min-height: 520px;
+  border: 1px solid rgba(24, 22, 19, 0.16);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.research-chart figcaption {
+  color: rgba(24, 22, 19, 0.58);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
 .article-body .media-placeholder {
   width: 100%;
   margin: 12px 0 14px;
@@ -797,6 +843,10 @@ p {
 
   .review-card header > p {
     text-align: left;
+  }
+
+  .research-chart iframe {
+    min-height: 460px;
   }
 }
 

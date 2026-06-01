@@ -28,7 +28,7 @@ const bolognaSections = [
     ],
     chart: {
       title: "New York Fed college labor market chart",
-      src: "https://www.newyorkfed.org/research/college-labor-market#--:explore:unemployment",
+      src: "/underemployment-chart.png",
       source: "Federal Reserve Bank of New York, The Labor Market for Recent College Graduates",
       sourceUrl: "https://www.newyorkfed.org/research/college-labor-market",
     },

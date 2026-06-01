@@ -367,9 +367,10 @@ p {
   margin-top: 2px;
 }
 
-.research-chart iframe {
+.research-chart img {
+  display: block;
   width: 100%;
-  min-height: 520px;
+  height: auto;
   border: 1px solid rgba(24, 22, 19, 0.16);
   background: rgba(255, 255, 255, 0.7);
 }
@@ -845,8 +846,12 @@ p {
     text-align: left;
   }
 
-  .research-chart iframe {
-    min-height: 460px;
+  .research-chart {
+    overflow-x: auto;
+  }
+
+  .research-chart img {
+    min-width: 680px;
   }
 }
 

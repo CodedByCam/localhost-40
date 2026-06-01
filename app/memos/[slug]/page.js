@@ -165,11 +165,7 @@ function TweetEmbed({ url }) {
 function ResearchChart({ chart }) {
   return (
     <figure className="research-chart">
-      <iframe
-        loading="lazy"
-        src={chart.src}
-        title={chart.title}
-      />
+      <img alt={chart.title} src={chart.src} />
       <figcaption>
         Source:{" "}
         <a href={chart.sourceUrl} rel="noreferrer" target="_blank">

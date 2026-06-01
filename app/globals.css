@@ -131,7 +131,6 @@ p {
   width: min(100%, 520px);
   margin: 0;
   padding: 0;
-  border-top: 1px solid var(--line);
   list-style: none;
 }
 
@@ -141,7 +140,6 @@ p {
   grid-template-columns: 4ch minmax(0, 1fr) 2ch;
   gap: 18px;
   padding: 7px 0;
-  border-bottom: 1px solid var(--line);
   font-family: var(--font-mono);
   font-size: 13px;
   line-height: 1.45;

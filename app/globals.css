@@ -1,6 +1,6 @@
 :root {
   color-scheme: light;
-  --bg: #f7f0e6;
+  --bg: #ffffff;
   --text: #181613;
   --accent: #1F4179;
   --muted: rgba(24, 22, 19, 0.52);
@@ -25,11 +25,7 @@ html {
 body {
   min-height: 100vh;
   margin: 0;
-  background:
-    linear-gradient(rgba(24, 22, 19, 0.028) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(24, 22, 19, 0.028) 1px, transparent 1px),
-    var(--bg);
-  background-size: 24px 24px;
+  background: var(--bg);
   color: var(--text);
   font-family: Charter, "Bitstream Charter", "Iowan Old Style",
     "Palatino Linotype", Palatino, Georgia, serif;
@@ -55,9 +51,9 @@ main {
   top: 22px;
   right: 24px;
   padding: 7px 10px;
-  border: 1px solid var(--line);
-  background: rgba(247, 240, 230, 0.72);
-  color: rgba(24, 22, 19, 0.7);
+  border: 0;
+  background: transparent;
+  color: #000;
   font-family: var(--font-mono);
   font-size: 12px;
   line-height: 1;
@@ -70,9 +66,9 @@ main {
   top: 22px;
   left: 24px;
   padding: 7px 10px;
-  border: 1px solid var(--line);
-  background: rgba(247, 240, 230, 0.72);
-  color: rgba(24, 22, 19, 0.7);
+  border: 0;
+  background: transparent;
+  color: #000;
   font-family: var(--font-mono);
   font-size: 12px;
   line-height: 1;
@@ -82,8 +78,6 @@ main {
 
 .site-link:hover,
 .site-link:focus-visible {
-  border-color: var(--accent);
-  background: rgba(31, 65, 121, 0.08);
   color: var(--accent);
   text-decoration: none;
 }
@@ -95,8 +89,6 @@ main {
 
 .message-link:hover,
 .message-link:focus-visible {
-  border-color: var(--accent);
-  background: rgba(31, 65, 121, 0.08);
   color: var(--accent);
   text-decoration: none;
   text-underline-offset: 4px;

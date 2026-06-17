@@ -8,8 +8,9 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const RESEND_ENDPOINT = "https://api.resend.com/emails";
 
-// Where signups land. Defaults to the site owner.
-const TO_EMAIL = process.env.CONTACT_TO_EMAIL || "cameron@sadlerrobotics.com";
+// Where signups land. Just an inbox we read — no domain/DNS requirement, so a
+// plain Gmail address works fine.
+const TO_EMAIL = process.env.CONTACT_TO_EMAIL || "cam.ccsadler@gmail.com";
 
 // The "from" address Resend sends as. `onboarding@resend.dev` works with zero
 // setup but can ONLY deliver to the Resend account owner's address — perfect

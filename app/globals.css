@@ -180,6 +180,20 @@ p {
   padding-left: 6px;
 }
 
+.memo-list a.is-dimmed,
+.memo-list a.is-dimmed::before {
+  color: var(--faint);
+}
+
+.memo-list a.is-dimmed::after {
+  color: var(--faint);
+}
+
+.memo-list a.is-dimmed:hover,
+.memo-list a.is-dimmed:focus-visible {
+  color: var(--muted);
+}
+
 .memo-list span {
   color: var(--faint);
   letter-spacing: 0.05em;
@@ -188,6 +202,92 @@ p {
 .memo-list a:focus-visible {
   outline: 1px solid rgba(31, 65, 121, 0.6);
   outline-offset: 5px;
+}
+
+.email-capture {
+  width: min(100%, 520px);
+  margin-top: 52px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.email-capture-label {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.email-capture-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.email-capture-form input {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.email-capture-form input::placeholder {
+  color: var(--faint);
+}
+
+.email-capture-form input:focus-visible {
+  border-color: var(--accent);
+  outline: 1px solid rgba(31, 65, 121, 0.6);
+  outline-offset: 2px;
+}
+
+.email-capture-form button {
+  padding: 9px 18px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.45;
+  cursor: pointer;
+  transition: opacity 140ms ease;
+}
+
+.email-capture-form button:hover:not(:disabled),
+.email-capture-form button:focus-visible:not(:disabled) {
+  opacity: 0.86;
+}
+
+.email-capture-form button:focus-visible {
+  outline: 1px solid rgba(31, 65, 121, 0.6);
+  outline-offset: 2px;
+}
+
+.email-capture-form input:disabled,
+.email-capture-form button:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+
+.email-capture-message {
+  margin: 12px 0 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.email-capture-message[data-state="done"] {
+  color: var(--accent);
+}
+
+.email-capture-message[data-state="error"] {
+  color: #b4451f;
 }
 
 .article-main {

@@ -1,4 +1,5 @@
 import { memoSlots } from "./memos/data";
+import EmailCapture from "./EmailCapture";
 
 export default function Home() {
   return (
@@ -28,7 +29,12 @@ export default function Home() {
             {memoSlots.map((memo, index) => (
               <li key={index}>
                 {memo ? (
-                  <a href={`/memos/${memo.slug}`}>{memo.title}</a>
+                  <a
+                    href={`/memos/${memo.slug}`}
+                    className={memo.slug === "1088-bologna" ? undefined : "is-dimmed"}
+                  >
+                    {memo.title}
+                  </a>
                 ) : (
                   <span>________</span>
                 )}
@@ -36,6 +42,8 @@ export default function Home() {
             ))}
           </ol>
         </nav>
+
+        <EmailCapture />
       </main>
     </>
   );

@@ -272,6 +272,28 @@ export function CourseEvidence() {
         ))}
       </div>
 
+      <div className="review-showcase">
+        <figure className="review-showcase-image">
+          <img
+            alt="Nox App Store screenshots: MacBook, meal plan and more for $0, book benefits in one click, use financial aid instantly, and get inspired by your community"
+            src="/nox-app-store.webp"
+          />
+        </figure>
+
+        <figure className="review-video">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            aria-label="Nox app product demo"
+          >
+            <source src="/nox.mp4" type="video/mp4" />
+          </video>
+        </figure>
+      </div>
+
       <div className="review-grid" aria-label="Course demo review images">
         {courseReviews.map((review) => (
           <article className="review-card" key={`${review.title}-${review.author}`}>
